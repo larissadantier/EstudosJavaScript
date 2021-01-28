@@ -3,9 +3,9 @@
 de funções não são acessadas
 fora das mesmas */
 
-function mostrarCarro(){
-    var carro = 'Fusca'
-    console.log(carro)
+function mostrarCarro() {
+  var carro = "Fusca";
+  console.log(carro);
 }
 
 mostrarCarro(); // Fusca
@@ -18,25 +18,25 @@ chave var, const ou let, cria uma
 variável que pode ser acessar em qualquer 
 escopo(global). Isso é um erro. */
 
-function mostrarCarro2(){
-    carro2 = 'Fusca';
-    console.log(carro2);
+function mostrarCarro2() {
+  carro2 = "Fusca";
+  console.log(carro2);
 }
 
-mostrarCarro2() // Fusca
+mostrarCarro2(); // Fusca
 console.log(carro2); // Fusca
 
 /* 'use strict' impede isso  */
 
 /* Escopo de Função (Pai) */
-var carro3 = 'Fusca';
+var carro3 = "Fusca";
 
-function mostrarCarro3(){
-    var frase = `Meu carro é um ${carro3}`;
-    console.log(frase);
+function mostrarCarro3() {
+  var frase = `Meu carro é um ${carro3}`;
+  console.log(frase);
 }
 
-mostrarCarro3() // Meu carro é um Fusca
+mostrarCarro3(); // Meu carro é um Fusca
 console.log(carro3); // Fusca
 
 /* Escopo de Bloco */
@@ -46,9 +46,9 @@ de declaramos uma variável é utilizando
 const e let, pois estas respeitam o
 escopo de bloco */
 
-if(true){
-    var carro4 = 'Fusca';
-    console.log(carro4);
+if (true) {
+  var carro4 = "Fusca";
+  console.log(carro4);
 }
 console.log(carro4); // carro
 
@@ -58,9 +58,9 @@ console.log(carro4); // carro
 ainda será declarada utilizando hoisting
 e o valor ficará como indefined. */
 
-if(false) {
-    var carro5 = 'Fusca';
-    console.log(carro5);
+if (false) {
+  var carro5 = "Fusca";
+  console.log(carro5);
 }
 
 console.log(carro5); // Undefined
@@ -69,30 +69,59 @@ console.log(carro5); // Undefined
 /* Utilizar apenas const e let
 para declarar variáveis */
 
-if(true){
-    const mes = 'Dezembro';
-    console.log(mes);
+if (true) {
+  const mes = "Dezembro";
+  console.log(mes);
 }
 
- //console.log(mes); // Erro, carro is not defined
+//console.log(mes); // Erro, carro is not defined
 
- /* {} criam um escopo de bloco, não
+/* {} criam um escopo de bloco, não
  confundir com a criação de objetos = {} */
 
- {
-     var carro6 = 'Fusca';
-     const ano = 2018;
- }
+{
+  var carro6 = "Fusca";
+  const ano = 2018;
+}
 
- console.log(carro6); // Fusca
- //console.log(ano); // erro ano is not defined
+console.log(carro6); // Fusca
+//console.log(ano); // erro ano is not defined
 
- /* For Loop */
- /* Ao utilizar var dentro de um for loop,
+/* For Loop */
+/* Ao utilizar var dentro de um for loop,
  que é um bloco, o valor da variável
  utilizada irá vazar e existir fora do loop. */
- for(var i=0; i < 10; i++){
-     console.log(`Número ${i}`)
- }
+for (var i = 0; i < 10; i++) {
+  console.log(`Número ${i}`);
+}
 
- console.log(i); // 10
+console.log(i); // 10
+
+//Const
+/* Mantém o escopo no bloco, impede a
+redeclaração e impede a modificação do
+valor da variável, evitando bugs no código */
+const mes = "Dezembro";
+//mes = 'Janeiro'; // Erro, tentou modificar o valor
+//const semana; //erro, declarou sem valor
+
+const data = {
+  dia: 28,
+  mes: "Dezembro",
+  ano: 2018,
+};
+data.dia = 29; // Funciona
+//data = 'Janeiro'; //Erro
+
+// Let
+/* Mantém o escopo no bloco, impede
+a redeclaração,mas permite a modificação
+do valor da variável */
+
+let ano;
+ano = 2018;
+ano++;
+console.log(ano);
+
+//let ano = 2020; // Erro, redeclarou a variável
+// Geralmente vamos utilizar o const.
