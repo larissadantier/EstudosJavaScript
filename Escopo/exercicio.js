@@ -8,12 +8,11 @@
  
   
   // Como corrigir o erro abaixo?
+  const dois = 2;
   function somarDois(x) {
-    const dois = 2;
     return x + dois;
   }
   function dividirDois(x) {
-    const dois = 2;
     return x + dois;
   }
   somarDois(4);
