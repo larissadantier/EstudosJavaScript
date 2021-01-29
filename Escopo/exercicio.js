@@ -19,7 +19,7 @@
   dividirDois(6);
   
   // O que fazer para total retornar 500?
- let numero = 50;
+ const numero = 50;
   
   for(let numero = 0; numero < 10; numero++) {
     console.log(numero);
