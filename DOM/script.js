@@ -39,7 +39,22 @@ const h1Selecionado = document.querySelector('h1');
 não precisamos chamar ele na frente
 dos seus métodos e propriedades */
 
+// Node
+/* Toda tag html é representada pelo
+objeto Element e por isso herda os
+seus métodos e propriedades. Element
+é um tipo de objeto Node */
 
+const titulo = document.querySelector('h1');
+titulo.innerText; // Retorna o texto;
+titulo.classList; // Retorna as classes;
+titulo.id; //Retorna o id;
+titulo.offsetHeight; // Retorna a aulta do elemento;
+
+titulo.addEventListener('click', function(){
+    console.log('Clicou em', h1Selecionado.innerText);
+}); 
+// Ativa a função callback ao click no titulo
 
 
 
