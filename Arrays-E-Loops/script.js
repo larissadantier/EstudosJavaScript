@@ -72,3 +72,15 @@ videoGames5.forEach(function(item){
 /* Podemos passar os seguintes
 parâmetros item,index e array */
 
+// Para podermos percorrer um array sem precisar usar o for, podemos usar a função map:
+
+let videoGames5 = ["Switch", "PS4", "Xbox", "3DS"];
+videoGames5.map(videoGame => {
+  console.log(videoGame)
+})
+/* resultado:
+Switch
+PS4
+Xbox
+3DS
+*/
